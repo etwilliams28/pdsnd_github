@@ -23,7 +23,7 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     city = input("Please input city name: ").lower()
     while city not in ['chicago', 'new york city', 'washington']:
-        city = input("City is name is invalid! Please input another name: ").lower()
+        city = input("City is name is invalid! Please input either (chicago,new york city or washington): ").lower()
         continue
         break
 
@@ -51,7 +51,7 @@ def get_filters():
         break
 
     while 1:
-        respones_day = input("Would you like to take a look at a specific day of the week? Yes or No: ").lower()
+        respones_day = input("Would you like to take a look at a specific day of the week? (yes/no): ").lower()
         if respones_day == "yes":
             respones_day=True
         elif respones_day == "no":
