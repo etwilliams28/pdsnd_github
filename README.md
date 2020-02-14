@@ -1,15 +1,17 @@
 ### Date created
-Include the date you created this project and README file.
+Create: February 14 2020  
 
 ### Project Title
-Replace the Project Title
+Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+An analysis of data provided the bike sharing company, Motivate.
 
 ### Files used
-Include the files used
+bikehsare.py
+chicago.csv
+washington.csv
+new_york_city.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+This project was completely while in attendance with Udacity's Nanodegree program.
