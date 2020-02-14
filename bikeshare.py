@@ -275,31 +275,6 @@ def main():
                 print("Ok moving onto statisics based on trip durations....")
             break
 
-
-
-
-        while 1:
-            ts = input("Would you like to look at statistics realated to time").lower()
-            if ts == "yes":
-                ts =True
-            elif ts == "no":
-                ts =False
-            else:
-                ts = input("Sorry that was not a valid input, please respond (yes/no)").lower()
-                continue
-            break
-
-        while 1:
-            if ts:
-                return time_stats(df)
-                continue
-            else:
-                print("Ok moving onto statisics based on stations")
-            break
-
-
-        station_stats(df)
-
         trip_duration_stats(df)
         user_stats(df, city)
 
