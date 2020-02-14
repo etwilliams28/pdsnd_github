@@ -23,7 +23,7 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     city = input("Please input city name: ").lower()
     while city not in ['chicago', 'new york city', 'washington']:
-        city = input("City is name is invalid! Please input another name: ").lower()
+        city = input("City is name is invalid! Please input either (chicago,new york city or washington): ").lower()
         continue
         break
 
@@ -51,7 +51,7 @@ def get_filters():
         break
 
     while 1:
-        respones_day = input("Would you like to take a look at a specific day of the week? Yes or No: ").lower()
+        respones_day = input("Would you like to take a look at a specific day of the week? (yes/no): ").lower()
         if respones_day == "yes":
             respones_day=True
         elif respones_day == "no":
@@ -235,7 +235,6 @@ def main():
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
-<<<<<<< HEAD
         while 1:
             ts = input("Would you like to look at statistics realated to time?: ").lower()
             if ts == "yes":
@@ -275,10 +274,10 @@ def main():
             else:
                 print("Ok moving onto statisics based on trip durations....")
             break
-||||||| b0bda46
-        time_stats(df)
+
+
         station_stats(df)
-=======
+
         while 1:
             ts = input("Would you like to look at statistics realated to time").lower()
             if ts == "yes":
@@ -300,7 +299,7 @@ def main():
 
 
         station_stats(df)
->>>>>>> master
+
         trip_duration_stats(df)
         user_stats(df, city)
 
