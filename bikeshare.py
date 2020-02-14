@@ -276,7 +276,7 @@ def main():
             break
 
 
-        station_stats(df)
+
 
         while 1:
             ts = input("Would you like to look at statistics realated to time").lower()
