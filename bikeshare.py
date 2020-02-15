@@ -138,6 +138,7 @@ def time_stats(df):
     print('-'*40)
 
 
+
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
@@ -235,81 +236,65 @@ def main():
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
+        def funl():
+            return time_stats(df)
+
+        ts = input("Would you like to look at statistics realated to time?: ").lower()
         while 1:
-            ts = input("Would you like to look at statistics realated to time?: ").lower()
             if ts == "yes":
-                ts =True
+                funl()
+                break
             elif ts == "no":
-                ts =False
+                print("moving on to next... ")
+                break
             else:
                 ts = input("Sorry that was not a valid input, please respond (yes/no): ").lower()
                 continue
-            break
 
+        def funl2():
+            return station_stats(df)
+
+        ss = input("Would you like to look at statistics realated to stations?: ").lower()
         while 1:
-            if ts:
-                return time_stats(df)
-                continue
-            else:
-                print("Ok moving onto statisics based on stations....")
-            break
-
-
-
-        while 1:
-            ts = input("Would you like to look at statistics realated to stations?: ").lower()
-            if ts == "yes":
-                ts =True
+            if ss == "yes":
+                funl2()
+                break
             elif ts == "no":
-                ts =False
+                print("moving onto next...")
+                break
             else:
-                ts = input("Sorry that was not a valid input, please respond (yes/no): ").lower()
+                ss = input("Sorry that was not a valid input, please respond (yes/no): ").lower()
                 continue
-            break
 
-        while 1:
-            if ts:
-                return station_stats(df)
-                continue
-            else:
-                print("Ok moving onto statisics based on trip durations....")
-            break
+        def funl3():
+            return trip_duration_stats(df)
 
+        tds = input("Would you like to look related to trip duration? (yes/no): ").lower()
         while 1:
-            tds = input("Would you like to look related to trip duration? (yes/no): ").lower()
             if tds == 'yes':
-                tds=True
+                funl3()
+                break
             elif tds =='no':
-                tds=False
+                print("moving onto next....")
+                break
             else:
                 tds = input("Sorry that as not a valid input, please respond with yes or no: ").lower()
                 continue
-            break
 
-        while 1:
-            if tds:
-                return trip_duration_stats(df)
-            else:
-                print("Ok moving on to user statistics")
-            break
+        def funl4():
+            return user_stats(df,city)
 
+        us = input("Would you like to take a look at stats related to users? (yes/no):  ").lower()
         while 1:
-            us = input("Would you like to take a look at stats related to users? (yes/no):  ").lower()
             if us == 'yes':
-                us=True
+                funl4()
+                break
             elif us == 'no':
-                us=False
+                print("moving onto next....")
+                break
             else:
                 input("Sorry but that is not a valid input, please respond yes or no: ").input()
                 continue
-            break
-
-        while 1:
-            if us:
-                return user_stats(df,city)
-            else:
-                print("ok moving on then... there is no more staticts to view")
-            break
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
