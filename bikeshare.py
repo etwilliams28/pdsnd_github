@@ -275,7 +275,24 @@ def main():
                 print("Ok moving onto statisics based on trip durations....")
             break
 
-        trip_duration_stats(df)
+        while 1:
+            tds = input("Would you like to look related to trip duration? (yes/no): ").lower()
+            if tds == 'yes':
+                tds=True
+            elif tds =='no':
+                tds=False
+            else:
+                tds = input("Sorry that as not a valid input, please respond with yes or no: ").lower()
+                continue
+            break
+
+        while 1:
+            if tds:
+                return trip_duration_stats(df)
+            else:
+                print("Ok moving on to user statistics")
+            break
+                    
         user_stats(df, city)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
