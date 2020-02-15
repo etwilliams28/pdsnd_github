@@ -189,7 +189,7 @@ def trip_duration_stats(df):
 
 
 def user_stats(df,city):
-    """Displays statistics on bikeshare users."""
+    """Displaying statistic related to users"""
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
