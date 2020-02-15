@@ -292,8 +292,24 @@ def main():
             else:
                 print("Ok moving on to user statistics")
             break
-                    
-        user_stats(df, city)
+
+        while 1:
+            us = input("Would you like to take a look at stats related to users? (yes/no):  ").lower()
+            if us == 'yes':
+                us=True
+            elif us == 'no':
+                us=False
+            else:
+                input("Sorry but that is not a valid input, please respond yes or no: ").input()
+                continue
+            break
+
+        while 1:
+            if us:
+                return user_stats(df,city)
+            else:
+                print("ok moving on then... there is no more staticts to view")
+            break
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
